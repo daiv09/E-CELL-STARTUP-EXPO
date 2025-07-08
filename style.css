@@ -87,10 +87,13 @@ nav {
   transition: all 0.5s ease;
 }
 .navbar a:hover {
-  color: #4cc9f0;
+  color: #b30000; /* Dark red text */
+  background-color: rgba(179, 0, 0, 0.15); /* Soft dark red background */
   border-radius: 8px;
-  box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+  box-shadow: 0 0 6px rgba(179, 0, 0, 0.6), 0 0 12px rgba(179, 0, 0, 0.4);
 }
+
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -107,11 +110,6 @@ nav {
   text-decoration: none;
 }
 
-.nav-right a:hover {
-  color: #4cc9f0;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
-}
 #menu-icon{
   cursor: pointer;
   z-index: 1001;
@@ -154,13 +152,13 @@ nav {
 }
 #rightCurtain {
   position: absolute;
-  left: 74%;
-  width: 40%;
+  left: 45%;
+  width: 55%;
 }
 #leftCurtain {
   position: absolute;
   left: 30;
-  width: 25%;
+  width: 50%;
 }
 .heroSection img {
   position: absolute;
@@ -171,17 +169,43 @@ nav {
   object-fit: cover;
   pointer-events: none;
 }
-
 #heroText {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   color: white;
-  margin-bottom: 10vh;
-  font-size: 11vw;
-  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3rem, 10vw, 10rem);
+  font-family: "Display", "Bebas Neue", sans-serif;
   font-weight: 400;
   overflow: hidden;
-  text-shadow: 2px 2px 7px rgba(255, 255, 255, 0.712);
+  text-align: center;
+
+  text-shadow:
+    /* Blue glow left */
+    -2px 0px 2px rgba(0, 0, 255, 0.5),
+    -4px 0px 8px rgba(0, 0, 255, 0.3),
+
+    /* Red glow right */
+    2px 0px 2px rgba(255, 0, 0, 0.5),
+    4px 0px 8px rgba(255, 0, 0, 0.3),
+
+    /* White glow */
+    0 0 12px rgba(255, 255, 255, 0.7),
+    0 0 24px rgba(255, 255, 255, 0.4),
+
+    /* Shadow */
+    2px 2px 10px rgba(0, 0, 0, 0.6);
 }
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P";
+  src: url("/font/PressStart2P-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /*--------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------- Event hIghlights Corousel ----------------------------------------------------*/
@@ -509,13 +533,15 @@ nav {
   gap: 4vh;
 }
 
-.fsub-heading{
+.fsub-heading {
   line-height: 1;
   font-size: 3vh;
   font-weight: 400;
   text-align: center;
+  margin-top: 5vh;      /* 👈 added */
   margin-bottom: 6vh;
 }
+
 
 .student-cards-container {
   display: flex;
@@ -1012,7 +1038,7 @@ textarea::-webkit-scrollbar-thumb {
 footer .underline {
   width: 100%;
   height: 4px;
-  background: #ffffff52;
+  background: #0077b6;
   border-radius: 3px;
   position: absolute;
   top: 25px;
@@ -1022,7 +1048,7 @@ footer .underline {
 footer .underline span {
   width: 15px;
   height: 100%;
-  background: #0077b6;
+  /* background: #0077b6; */
   border-radius: 3px;
   position: absolute;
   top: 0;

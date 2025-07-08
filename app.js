@@ -20,7 +20,7 @@ function handleScrollAndResize() {
   if (window.innerWidth > 768) { // Only apply if screen width is greater than 768px
     if (window.scrollY > 100) { // Adjust this value to suit your needs
       nav.style.backgroundColor = "transparent";
-      navbar.style.background = "linear-gradient(247deg, rgba(15, 37, 110, 1) 25%, rgba(21, 23, 20, 1) 67%)";
+      navbar.style.background = "linear-gradient(247deg,  rgb(0, 0, 0) 100%)";
       navbar.style.borderRadius = "20px";
       navbar.style.padding = "15px 5px";
       navRight.style.opacity = "0";
@@ -90,19 +90,20 @@ function heroAnimation() {
       scrub: 2,
     },
   });
+  setTimeout(() => {
   gsap.to("#leftCurtain", {
     x: -700,
-    duration: 1,
-    scrollTrigger: {
-      scrub: 2,
-    },
+    duration: 3,
   });
   gsap.to("#rightCurtain", {
-    x: 700,
-    scrollTrigger: {
-      scrub: 2,
-    },
+    x: 750,
+    duration: 3,
   });
+}, 2000); // 5 seconds after script is run
+
+
+;
+
   gsap.to("#heroText", {
     y: 500,
     scrollTrigger: {
