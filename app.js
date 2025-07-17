@@ -6,7 +6,7 @@ menu.onclick = () => {
   navbar.classList.toggle("open");
 };
 
-Shery.mouseFollower();
+// Shery.mouseFollower();
 Shery.makeMagnet(".logo img", {
   ease: "cubic-bezier(0.23, 1, 0.320, 1)",
 });
