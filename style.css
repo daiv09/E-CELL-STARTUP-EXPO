@@ -32,33 +32,41 @@ body::before,
 body::after {
   content: '';
   position: absolute;
-  width: 250%;
-  height: 250%;
   top: -75%;
   left: -75%;
-  z-index: -1;
+  width: 250%;
+  height: 250%;
+  z-index: -3;
   pointer-events: none;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 93, 13, 0.12), transparent 70%),
-              radial-gradient(circle at 70% 40%, rgba(255, 153, 0, 0.08), transparent 60%),
-              radial-gradient(circle at 50% 70%, rgba(255, 93, 13, 0.1), transparent 60%);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 93, 13, 0.12), transparent 70%),
+    radial-gradient(circle at 70% 40%, rgba(255, 153, 0, 0.08), transparent 60%),
+    radial-gradient(circle at 50% 70%, rgba(255, 93, 13, 0.1), transparent 60%);
   animation: orangeGlow 40s ease-in-out infinite;
-}
-
-body::after {
   animation-delay: 10s;
   opacity: 0.6;
   filter: blur(60px);
 }
 
+/* Animations */
 @keyframes orangeGlow {
   0% {
-    transform: scale(1) translate(0, 0) rotate(0deg);
+    transform: scale(1) translate(0, 0);
   }
   50% {
-    transform: scale(1.1) translate(60px, 40px) rotate(180deg);
+    transform: scale(1.05) translate(2%, -2%);
   }
   100% {
-    transform: scale(1) translate(0, 0) rotate(360deg);
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0 -20px;
+  }
+  100% {
+    background-position: 0 100%;
   }
 }
 
@@ -354,16 +362,18 @@ nav {
 
 
 .countdownSection {
-  margin-top: 3rem;
-  padding: 2rem 4vw;
+  margin-top: 4rem;
+  padding: 3rem 5vw;
   text-align: center;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000000; /* solid black background */
   color: #ffffff;
-  z-index: 3;
+  border-top: 2px solid #1f1f1f;
+  border-bottom: 2px solid #1f1f1f;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
   position: relative;
+  z-index: 3;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .countdownSection h3 {
